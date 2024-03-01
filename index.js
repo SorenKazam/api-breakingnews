@@ -1,11 +1,8 @@
-console.log("index.js called")
+const express = require("express");
+const userRoute = require("./src/routes/user.route");
+const app = express();
+const PORT = 3000;
 
-const express = require('express')
-const app = express()
-const PORT = 3000
+app.use("/soma", userRoute);
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-})
-
-app.listen(PORT)
+app.listen(PORT);
